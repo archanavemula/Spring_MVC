@@ -1,0 +1,10 @@
+Test page:
+
+create table member
+(id  INT(5) PRIMARY KEY,
+password VARCHAR(20),
+name VARCHAR(30),
+phone INT(10));
+
+
+insert into member values(23451,'love','laddu',988627588);
