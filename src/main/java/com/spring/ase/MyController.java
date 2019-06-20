@@ -45,26 +45,31 @@ public class MyController {
 
 	
 
-	@RequestMapping("/studentaccount")
-	public String studentaccount(Model model) {
+	@RequestMapping("/useraccount")
+	public String useraccount(Model model) {
 
-		return "studentaccount";
+		return "useraccount";
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/student")
+	@RequestMapping(method = RequestMethod.POST, value = "/user")
 	public ModelAndView loginConfirm(HttpServletRequest httpServletRequest, Model model) {
-
+		boolean validate = false;
 		String id = httpServletRequest.getParameter("id");
 		String pw = httpServletRequest.getParameter("pw");
 
-		// model.addAttribute("studentId", id);
-		// model.addAttribute("studentPw", pw);
-
+		LoginDao dao= new LoginDao();
+		validate = dao.checkLoginDetails(id,pw);
+		
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("studentId", id);
-		mv.addObject("studentPw", pw);
+		mv.addObject("userId", id);
+		mv.addObject("userPw", pw);
+		if(validate) {
 		mv.setViewName("loginDisplay");
-
+		}else {
+		mv.addObject("error", "Invalid login details. Please try again!!!");
+		mv.setViewName("login");	
+		}
+		
 		return mv;
 
 		// return "loginDisplay";

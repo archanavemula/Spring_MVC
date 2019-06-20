@@ -81,21 +81,15 @@ span.psw {
 </head>
 <body>
 
-<!--  form action = "student" method="post">
-	student id : <input type="text" name="id"> <br/>
-	student password : <input type="text" name="pw"> <br/>
-	<input type = "submit" value = "send">	
-</form-->
 
-
-
-<form  action = "student" method="post">
+<form  action = "user" method="post">
+	<div><h1><font size="3" color="red">${error}</font></h1></div>
   <div class="imgcontainer">
     <img src="/spring/resources/img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="uname"><b>Student ID</b></label>
+    <label for="uname"><b>User ID</b></label>
     <input type="text" placeholder="Enter UserId" name="id" required>
 
     <label for="psw"><b>Password</b></label>
@@ -109,7 +103,7 @@ span.psw {
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>    
-    <span class="psw"><a href="/spring/studentaccount">Create Account</a></span><br>
+    <span class="psw"><a href="/spring/useraccount">Create Account</a></span><br>
     <span class="psw"><a href="#">Forgot password?</a></span>
   </div>
 </form>

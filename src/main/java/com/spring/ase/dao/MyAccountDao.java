@@ -30,14 +30,11 @@ public class MyAccountDao {
 public int updateMember(MyAccountDto bdto) {	
 	try {
 				
-		String query1 ="insert into address (address,city,state,zip) values('"+bdto.getAddress()+"','"+bdto.getCity()+"','"+bdto.getState()+"','"+bdto.getZip()+"')";
-		String query2 = "insert into usermem(username,email) values ('" + bdto.getFirstname() +"','" +bdto.getEmail() + "')";
-		String query3 = "insert into payments(name,ccnumber,expmonth,expyear,cvv) values ('" + bdto.getCname() +"','" +bdto.getCcnum()+"','"+bdto.getExpmonth()+"','"+bdto.getExpyear()+"','"+bdto.getCvv() + "')";
+		String query1 ="insert into userdets (firstname,email,address,city,state,zip,cardname,cardnumber,expmonth,expyear,cvv) values('"+ bdto.getFirstname()+"','"+bdto.getEmail() + "','"+bdto.getAddress()+"','"+bdto.getCity()+"','"+bdto.getState()+"','"+bdto.getZip() +"','"  + bdto.getCname() +"','" +bdto.getCcnum()+"','"+bdto.getExpmonth()+"','"+bdto.getExpyear()+"','"+bdto.getCvv() + "')";
 		 
 		int res = updateTable(query1);
-		int res1 = updateTable(query2);
-		int res2 = updateTable(query3);
-		System.out.println(res +  res1 + res2);
+
+		System.out.println(res);
 	}catch(Exception e) {
 		e.printStackTrace();
 	}
