@@ -141,7 +141,7 @@ span.psw {
 </head>
 <body>
 <div class="container" style="background-color:#f1f1f1">    
-    <span class="container" ><h3>My Account</h3></span>
+    <span class="container"><h3>My Account</h3></span>
   </div>
 
 <div class="row">

@@ -100,23 +100,23 @@ function validate(evt) {
 
 <form action="account" style="border:1px solid #ccc">
   <div class="container">
-    <h1>Sign Up</h1>
+    <h1><font color="#07A8C3">Sign Up</font></h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="Id"><b>User Id</b></label>
+    <label for="Id"><b><font color="#07A8C3">User Id</font></b></label>
     <input type="text" placeholder="Enter UserId" name="id" maxlength="8"  required>
 
-    <label for="psw"><b>Password</b></label>
+    <label for="psw"><b><font color="#07A8C3">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="pw" maxlength="10"  required>
 
-	 <label for="psw-repeat"><b>Repeat Password</b></label>
+	 <label for="psw-repeat"><b><font color="#07A8C3">Repeat Password</font></b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" maxlength="10" required>
 
-	<label for="name"><b>Name</b></label>
+	<label for="name"><b><font color="#07A8C3">Name</font></b></label>
     <input type="text" placeholder="Enter Name" name="name" maxlength="10" required>
 
-	<label for="email"><b>Phone</b></label>
+	<label for="email"><b><font color="#07A8C3">Phone</font></b></label>
     <input type="text" placeholder="Enter Phone" name="phone" required maxlength="9" onkeypress='validate(event)'>
 
    
