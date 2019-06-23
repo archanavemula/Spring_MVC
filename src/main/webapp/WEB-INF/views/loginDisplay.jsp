@@ -8,7 +8,9 @@
 .wrapper {
 	width: 68em;
 }
-
+.column{
+	float:left;
+}
 
 
 
@@ -207,6 +209,169 @@ body {
 		&:hover { background: lighten($light-gray, 10%); }
 	}
 }
+
+        /* Basics */
+        html, body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: "Helvetica Neue" , Helvetica, sans-serif;
+            background: #FFFFFF;
+        }
+        .logincontent
+        {
+            position: fixed;
+            width: 350px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -175px;
+            background: #07A8C3;
+            padding-top: 10px;
+        }
+        .loginheading
+        {
+            border-bottom: solid 1px #ECF2F5;
+            padding-left: 18px;
+            padding-bottom: 10px;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        label
+        {
+            color: #ffffff;
+            display: inline-block;
+            margin-left: 18px;
+            padding-top: 10px;
+            font-size: 15px;
+        }
+        input[type=text], input[type=password]
+        {
+            font-size: 14px;
+            padding-left: 10px;
+            margin: 10px;
+            margin-top: 12px;
+            margin-left: 18px;
+            width: 300px;
+            height: 35px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f5f5;
+            font-size: 14px;
+        }
+        input[type=checkbox]
+        {
+            margin-left: 18px;
+            margin-top: 30px;
+        }
+        .loginremember
+        {
+            background: #ECF2F5;
+            height: 70px;
+            margin-top: 20px;
+        }
+        .check
+        {
+            font-family: sans-serif;
+            position: relative;
+            top: -2px;
+            margin-left: 2px;
+            padding: 0px;
+            font-size: 12px;
+            color: #321;
+        }
+        .loginbtn
+        {
+            float: right;
+            margin-right: 20px;
+            margin-top: 20px;
+            padding: 6px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #07A8C3;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
+            background-image: -moz-linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
+            background-image: linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
+            border-radius: 30px;
+            border: 1px solid #07A8C3;
+            cursor: pointer;
+        }
+        button{
+        
+           
+            padding: 6px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #07A8C3;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
+            background-image: -moz-linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
+            background-image: linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
+            border-radius: 30px;
+            border: 1px solid #07A8C3;
+            cursor: pointer;
+        }
+        .loginbtn:hover
+        {
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
+            background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+            background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+        }
+        h1
+        {
+            border-bottom: solid 1px #ECF2F5;
+            padding-left: 18px;
+            background-color:#F5F5F5
+            padding-bottom: 10px;
+            color: #07A8C3;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+    a:link, a:visited {
+    background-color: #07A8C3;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+}
+
+
+a:hover, a:active {
+    background-color: #07A8C3;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+div{
+  background:#F5F5F5;
+  width:auto;
+  height:auto;
+  padding:1em;
+}
+
 </style>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -222,160 +387,144 @@ $(document).ready(function() {
 	});
 </script>
 </head>
+</style>
+    <link rel="stylesheet" href="/styles.css">   
 <body>
 <main class="container">
-
-  <h1> welcome ${userId}! <br></h1>
+  <center>
+		  <h1>AJIO Online Store </h1> 
+  </center>
+  
   <div class="container" style="background-color:#f1f1f1">
     <a href="/spring/myaccount" type="button" class="myaccount" ">MyAccount</a>    
     <span class="psw"></span><br>
     <span class="psw"></span>
   </div>
   <!-- Left Column / Headphones Image -->
-
- <div class="wrapper">
-	<div class="desc">
-		<h1>Ecommerce product list/grid</h1>
-		<p>Fashion clothing shoes and accessories.</p>
-	</div>
-
-	<div class="content">
-		<!-- content here -->
-		<div class="product-grid product-grid--flexbox">
-			<div class="product-grid__wrapper">
-				<!-- Product list start here -->
-
-				<!-- Single product -->
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="/spring/resources/shoes-denim.jpg" alt="Img" height="200" width="200" />
+ <div class="section group">
+			<table style="width:100%">
+			
+				<div class="col span_1_of_3">
+					<tr class="ul_2">
+						
+							<th class="li_2">	
+													
+								<img  height='200' width='200' src="/spring/resources/1.jpg"/>
+								
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Striped T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
 						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">19.99$</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">Echo Input – Bring Alexa to your own speaker- Black.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
+							</th>
+							<th class="li_2">	
+								
+								<img  height='200' width='200' src="/spring/resources/2.jpg"/>
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Blue T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+							</th>
+							<th class="li_2">
+								
+								<img  height='200' width='200' src="/spring/resources/3.jpg"/>
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Purple T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> <button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+							</th>
+												
+					</tr>
+					<tr class="ul_2">
+						
+							<th class="li_2">	
+													
+								<img  height='200' width='200' src="/spring/resources/4.jpg"/>
+								
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Black T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
 						</div>
-					</div>
+							</th>
+							<th class="li_2">	
+								
+								<img  height='200' width='200' src="/spring/resources/5.jpg"/>
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Blue T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+							</th>
+							<th class="li_2">
+								
+								<img  height='200' width='200' src="/spring/resources/6.jpg"/>
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">White T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> <button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+							</th>
+												
+					</tr>
+					<tr class="ul_2">
+						
+							<th class="li_2">	
+													
+								<img  height='200' width='200' src="/spring/resources/7.jpg"/>
+								
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Showpiece</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+						</div>
+							</th>
+							<th class="li_2">	
+								
+								<img  height='200' width='200' src="/spring/resources/8.jpg"/>
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Black T-Shirt</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><button>Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+							</th>
+							<th class="li_2">
+								
+								<img  height='200' width='200' src="/spring/resources/9.jpg"/>
+								<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">Red T-Shirt</p>
+									
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> <button >Add to cart</button> </span>				
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> </span>
+								</div>
+							</th>
+												
+					</tr>
 				</div>
-				<!-- end Single product -->
+		
+			</table>
+		</div>	
+		<br>
+		<div align="RIGHT">
 
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="/spring/resources/picography-woman-black-tank-top-1.jpg" alt="Img" height="200" width="200" />
-						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">28.99€</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">Daily Ritual Women's Tencel Dress.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="/spring/resources/iso-republic-silver-snowflakes-on-gold-textured-background.jpg" alt="Img" height="200" width="200" />
-						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">2.69€</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">Rurah Fashion Necklace Metal Blooming Bauhinia Flower Temperament Jelly Color Necklace Jewelry Gift For Women,Pink.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="/spring/resources/new-york-street-style.png" alt="Img" height="200" width="200" />
-						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">35.99€</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">Lark & Ro Women's Short Sleeve Hidden Placket Shirt Dress.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="/spring/resources/iso-republic-nikon-film-camera-close-up.jpg" alt="Img" height="200" width="200" />
-						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">1.99$</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">IEason Clearance New Fashion Jewelry Silver Womens Charm Bangle Bracelet Gift.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="https://images.apple.com/euro/macbook/a/screens/specs/images/finish_silver_large.jpg" alt="Img" height="200" width="200"/>
-						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">9.99$</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">U7 18K Gold Half Moon & Tinkle Bell Love Classic Dangling Earrings.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="product-grid__product-wrapper">
-					<div class="product-grid__product">
-						<div class="product-grid__img-wrapper">			
-							<img src="https://images.apple.com/euro/macbook/a/screens/specs/images/finish_silver_large.jpg" alt="Img" height="200" width="200" />
-						</div>
-						<span class="product-grid__title">Product title</span>
-						<span class="product-grid__price">0.99€</span>
-						<div class="product-grid__extend-wrapper">
-							<div class="product-grid__extend">
-								<p class="product-grid__description">Sinwo Women Opal Ring Fashion Women Jewelry Filled Wedding Engagement Six Claw Ring Gift.</p>
-								<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>		
-		</div>
-	</div>
-
-	
-</div>
 </main>
 </body>
 <footer>
-		<a target="_blank" >@ase-2019-archana</a>
+		<a target="_blank" >@AJIO</a>
 	</footer>
 
 </html>

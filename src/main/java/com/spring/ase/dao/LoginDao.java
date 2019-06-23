@@ -16,13 +16,14 @@ public class LoginDao {
 
 	DataSource dataSource;
 
-	public LoginDao() {
+	public LoginDao() throws NamingException {
 		try {
 			Context context = new InitialContext();
 			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new NamingException();
 		}
 
 	}

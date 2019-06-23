@@ -2,6 +2,7 @@ package com.spring.ase;
 
 import java.util.ArrayList;
 
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ import com.spring.ase.dto.MyAccountDto;
 public class MyController {
 
 	@RequestMapping("/list")
-	public String list(Model model) {
+	public String list(Model model) throws NamingException {
 
 		LoginDao dao = new LoginDao();
 		ArrayList<BDto> dtos = dao.list();
@@ -56,10 +57,16 @@ public class MyController {
 		boolean validate = false;
 		String id = httpServletRequest.getParameter("id");
 		String pw = httpServletRequest.getParameter("pw");
-
-		LoginDao dao= new LoginDao();
-		validate = dao.checkLoginDetails(id,pw);
-		
+		httpServletRequest.getSession().setAttribute("id", id);
+		LoginDao dao;
+		try {
+			dao = new LoginDao();
+			validate = dao.checkLoginDetails(id,pw);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			validate = false;
+		}	
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("userId", id);
 		mv.addObject("userPw", pw);
@@ -89,7 +96,9 @@ public class MyController {
 	}
 
 	@RequestMapping("/account")
-	public String createAccount(HttpServletRequest httpservletrequest, Model model) {
+	public ModelAndView createAccount(HttpServletRequest httpservletrequest, Model model) {
+
+		boolean validate = false;
 
 		String id = httpservletrequest.getParameter("id");
 		String pw = httpservletrequest.getParameter("pw");
@@ -98,12 +107,28 @@ public class MyController {
 		String phone = httpservletrequest.getParameter("phone");
 		BDto bdto = new BDto(id, pw, name, phone);
 
-		LoginDao dao = new LoginDao();
-		dao.createMember(bdto);
+		LoginDao dao;
+		try {
+			dao = new LoginDao();
+			dao.createMember(bdto);
+			validate = true;
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			validate = false;
+		}
+		ModelAndView mv = new ModelAndView();
+
+		if (validate) {
+			mv.setViewName("/member/accountSuccess");
+		} else {
+			mv.addObject("error", "Provide valid details. Please try again!!!");
+			mv.setViewName("useraccount");
+		}
 
 		model.addAttribute("name", name);
 
-		return "/member/accountSuccess";
+		return mv;
 	}
 
 }

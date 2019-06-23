@@ -20,9 +20,27 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+.btn
+        {
+            float: right;
+            margin-right: 30px;
+            margin-top: 30px;
+            padding: 6px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #07A8C3;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#07A8C3), to(#6EE4E8));
+            background-image: -moz-linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
+            background-image: linear-gradient(top left 90deg, #07A8C3 0%, #6EE4E8 100%);
+            border-radius: 30px;
+            border: 1px solid #07A8C3;
+            cursor: pointer;
+        }
+        
+/* Set a style for all buttons #4CAF50; */
 button {
-  background-color: #4CAF50;
+  background-color: #07A8C3; 
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -36,11 +54,11 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Extra style for the cancel button (red) */
+/* Extra style for the cancel button (red) #f44336; */
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #f44336;
+  background-color: #07A8C3;
 }
 
 /* Center the avatar image inside this container */

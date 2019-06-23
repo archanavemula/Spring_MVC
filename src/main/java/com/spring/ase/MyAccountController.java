@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ase.dao.MyAccountDao;
 import com.spring.ase.dto.MyAccountDto;
@@ -25,8 +26,8 @@ public class MyAccountController {
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/accountUpdate")
-	public String accountUpdate(HttpServletRequest httpServletRequest, Model model) {
-
+	public ModelAndView accountUpdate(HttpServletRequest httpServletRequest, Model model) {
+		int validate = 0;
 		String address = httpServletRequest.getParameter("address");
 		String city = httpServletRequest.getParameter("city");
 		String state = httpServletRequest.getParameter("state");
@@ -53,17 +54,30 @@ public class MyAccountController {
 		account.setFirstname(firstname);
 		account.setState(state);
 		account.setZip(zip);
-
+		account.setId((String)httpServletRequest.getSession().getAttribute("id"));
 		MyAccountDao dao = new MyAccountDao();
-		dao.updateMember(account);
+		try {
+			validate = dao.updateMember(account);	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(validate);
+			e.printStackTrace();
+			
+		}
 
-		//ModelAndView mv = new ModelAndView();
-		model.addAttribute("firstname", firstname);
-		//mv.setViewName("accountUpdateSuccess");
-
-		return "/accountupdated";
-
-		// return "loginDisplay";
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("firstname", firstname);
+		if(validate!=0) {
+			mv.setViewName("/accountupdated");
+			System.out.println("view name" +  "/accountupdated");
+		}
+		else {
+			mv.setViewName("/myaccount");
+			mv.addObject("error", "Invalid details provided.Please try again!");
+			System.out.println("view name" +  "/myaccount");
+		}
+		
+		return mv;
 	}
 
 }

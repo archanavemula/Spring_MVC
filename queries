@@ -9,7 +9,7 @@ phone INT(11));
 
 insert into member values(23451,'love','laddu',988627588);
 
-create table userdetails
+create table userdets
 (id VARCHAR(8) PRIMARY KEY,
 firstname VARCHAR(20),
 email VARCHAR(20),
